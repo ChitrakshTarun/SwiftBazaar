@@ -1,6 +1,6 @@
 # SwiftBazaar
 
-A React Native Quick E-commerce application, built using Expo & Nativewind.
+A React Native E-commerce application, built using Expo, Nativewind & Platzi Fake Store API.
 
 # Tech Stack
 
@@ -10,6 +10,7 @@ A React Native Quick E-commerce application, built using Expo & Nativewind.
 - Expo
 - JavaScript/TypeScript
 - NativeWind
+- Platzi Fake Store API
 
 ### Dependencies
 
