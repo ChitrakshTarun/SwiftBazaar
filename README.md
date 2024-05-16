@@ -10,10 +10,11 @@ A React Native E-commerce application, built using Expo, Nativewind & Platzi Fak
 - Expo
 - JavaScript/TypeScript
 - NativeWind
-- Platzi Fake Store API
+- Fake Store API
 
 ### Dependencies
 
 - `expo-router` File-based Routing & Navigation
 - `expo-font` Custom Fonts
-- `react-native-reanimated` App Animations
+- `react-native-reanimated` Animations
+- `@tanstack/react-query` API Request Handling

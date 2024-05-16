@@ -12,10 +12,10 @@ const LandingPage = () => {
       <Text className="text-7xl">SwiftBazaar</Text>
 
       <View className="items-center w-full gap-6 px-4">
-        <Pressable className=" bg-red-500 rounded-2xl py-5 w-full items-center" onPress={() => router.push("/(auth)/login")}>
+        <Pressable className=" bg-red-500 rounded-2xl py-5 w-full items-center" onPress={() => router.push("/(verified)/(tabs)/home")}>
           <Text className="text-2xl font-bold color-white">Login</Text>
         </Pressable>
-        <Pressable className=" bg-red-500 rounded-2xl py-5 w-full items-center" onPress={() => router.push("/(auth)/signup")}>
+        <Pressable className=" bg-red-500 rounded-2xl py-5 w-full items-center" onPress={() => router.push("/signup")}>
           <Text className="text-2xl font-bold color-white">Sign-Up</Text>
         </Pressable>
       </View>
