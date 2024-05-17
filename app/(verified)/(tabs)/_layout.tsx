@@ -26,6 +26,12 @@ export default function TabLayout() {
             title: "Products",
           }}
         />
+        <Tabs.Screen
+          name="cart"
+          options={{
+            title: "Cart",
+          }}
+        />
       </Tabs>
     </QueryClientProvider>
   );

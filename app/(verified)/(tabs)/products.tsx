@@ -1,20 +1,44 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Pressable, ScrollView } from "react-native";
+import { Image } from "expo-image";
 import { useQuery } from "@tanstack/react-query";
 import { Product } from "@/constants/interfaces/products";
+import { useRouter } from "expo-router";
 
 export default function ProductsPage() {
-  const products = useQuery({
+  const router = useRouter();
+  const { data: products, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: () => fetch("http://localhost:8081/api/products").then((res) => res.json()),
+    queryFn: () => fetch("/api/products").then((res) => res.json()),
   });
+
+  if (isLoading) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
-      <View>
-        {products.data?.map((product: Product) => (
-          <Text key={product.id}>{product.title}</Text>
+      <ScrollView>
+        {products?.map((product: Product) => (
+          <Pressable
+            key={product.id}
+            onPress={() => {
+              console.log(product.title, product.id);
+              console.log(typeof product.title, typeof product.id);
+              router.push({
+                pathname: "/(verified)/item/[id]",
+                params: { id: product.id, image: product.image },
+              });
+            }}
+          >
+            <Image style={{ height: 100 }} contentFit="scale-down" source={product.image} />
+            <Text className="text-xl">{`${product.title}`}</Text>
+          </Pressable>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }

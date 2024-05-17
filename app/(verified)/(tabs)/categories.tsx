@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 export default function CategoriesPage() {
   const categories = useQuery({
     queryKey: ["categories"],
-    queryFn: () => fetch("http://localhost:8081/api/categories").then((res) => res.json()),
+    queryFn: () => fetch("/api/categories").then((res) => res.json()),
   });
   return (
     <View style={styles.container}>
