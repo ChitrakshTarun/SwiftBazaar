@@ -26,11 +26,9 @@ export default function ProductsPage() {
           <Pressable
             key={product.id}
             onPress={() => {
-              console.log(product.title, product.id);
-              console.log(typeof product.title, typeof product.id);
               router.push({
                 pathname: "/(verified)/item/[id]",
-                params: { id: product.id, image: product.image },
+                params: { id: product.id, image: product.image, title: encodeURIComponent(product.title.replace(/\(/g, "%28").replace(/\)/g, "%29")) },
               });
             }}
           >
