@@ -32,7 +32,7 @@
       [
         "expo-router",
         {
-          "origin": "https://google.com/"
+          "origin": "https://fakestoreapi.com/"
         }
       ],
       "expo-font"

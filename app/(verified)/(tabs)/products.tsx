@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Pressable, ScrollView } from "react-native";
 import { Image } from "expo-image";
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "@/constants/interfaces/products";
+import { Product } from "@/constants/interfaces/ProductInterface";
 import { useRouter } from "expo-router";
 
 export default function ProductsPage() {
@@ -32,7 +32,7 @@ export default function ProductsPage() {
               });
             }}
           >
-            <Image style={{ height: 100 }} contentFit="scale-down" source={product.image} />
+            <Image style={{ height: 100 }} contentFit="contain" source={product.image} />
             <Text className="text-xl">{`${product.title}`}</Text>
           </Pressable>
         ))}
